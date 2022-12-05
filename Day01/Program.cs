@@ -1,5 +1,4 @@
 ﻿using Day01.Factories;
-using Day01.Models;
 using System.Text;
 
 StreamReader sr = File.OpenText(@"..\..\..\Data\Data.txt");
