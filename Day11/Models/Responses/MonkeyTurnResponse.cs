@@ -3,18 +3,18 @@
 namespace Day11.Models.Responses
 {
     /// <summary>
-    /// the response for changing the worry of an item
+    /// object containing the response of the monkey's turn
     /// </summary>
-    public class ChangeWorryResponse
+    public class MonkeyTurnResponse
     {
         /// <summary>
-        /// the status of the change worry request
+        /// the status of the request
         /// </summary>
         public StatusEnum Status { get; set; } = StatusEnum.Failure;
 
         /// <summary>
-        /// the worry after it has been adjusted
+        /// the monkeys at the end of the turn
         /// </summary>
-        public ulong Worry { get; set; } = 0;
+        public List<Monkey> Monkeys { get; set; } = new List<Monkey>();
     }
 }

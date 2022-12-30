@@ -10,7 +10,7 @@ namespace Day11.Models.Requests
         /// <summary>
         /// the starting worry for the item
         /// </summary>
-        public int Worry { get; set; } = 0;
+        public ulong Worry { get; set; } = 0;
 
         /// <summary>
         /// the adjustment that the worry should make

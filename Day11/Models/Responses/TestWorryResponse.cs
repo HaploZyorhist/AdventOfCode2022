@@ -3,18 +3,18 @@
 namespace Day11.Models.Responses
 {
     /// <summary>
-    /// the response for changing the worry of an item
+    /// object returning data on the worry test
     /// </summary>
-    public class ChangeWorryResponse
+    public class TestWorryResponse
     {
         /// <summary>
-        /// the status of the change worry request
+        /// indicator of whether the request was a success
         /// </summary>
         public StatusEnum Status { get; set; } = StatusEnum.Failure;
 
         /// <summary>
-        /// the worry after it has been adjusted
+        /// indicator of whether the test was a success
         /// </summary>
-        public ulong Worry { get; set; } = 0;
+        public bool Result { get; set; } = false;
     }
 }

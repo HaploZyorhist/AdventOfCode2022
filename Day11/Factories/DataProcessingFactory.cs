@@ -41,15 +41,15 @@ namespace Day11.Factories
 
                     var monkey = response.MonkeyList.Where(x => x.MonkeyName == int.Parse(rawMonkeyData[0].Trim().Replace("Monkey ", "").Replace(":", ""))).First();
 
-                    monkey.Test = int.Parse(rawMonkeyData.Where(x => x.Contains("Test:")).First().Trim().Replace("Test: divisible by ", ""));
+                    monkey.Test = ulong.Parse(rawMonkeyData.Where(x => x.Contains("Test:")).First().Trim().Replace("Test: divisible by ", ""));
 
                     var testTrue = int.Parse(rawMonkeyData.Where(y => y.Contains("If true: throw to monkey ")).First().Trim().Replace("If true: throw to monkey ", ""));
 
-                    monkey.TestTrue = response.MonkeyList.Where(x => x.MonkeyName == testTrue).First();
+                    monkey.TestTrue = response.MonkeyList.Where(x => x.MonkeyName == testTrue).First().MonkeyName;
 
                     var testFalse = int.Parse(rawMonkeyData.Where(y => y.Contains("If false: throw to monkey ")).First().Trim().Replace("If false: throw to monkey ", ""));
 
-                    monkey.TestFalse = response.MonkeyList.Where(x => x.MonkeyName == testFalse).First();
+                    monkey.TestFalse = response.MonkeyList.Where(x => x.MonkeyName == testFalse).First().MonkeyName;
 
                     var adjustmentData = rawMonkeyData.Where(x => x.Contains("Operation: ")).First().Trim().Replace("Operation: new = old ", "").Split(" ").ToList();
 
@@ -79,7 +79,7 @@ namespace Day11.Factories
 
                     foreach (var item in heldItems)
                     {
-                        monkey.Items.Add(int.Parse(item));
+                        monkey.Items.Add(ulong.Parse(item));
                     }
 
                 }
